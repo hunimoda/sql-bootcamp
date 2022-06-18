@@ -1,12 +1,12 @@
 CREATE DATABASE cats_app;
 USE cats_app;
-CREATE TABLE cats(
-    name VARCHAR(50),
-    age INT);
+CREATE TABLE cats(name VARCHAR(50), age INT);
 INSERT INTO cats(name, age)
-    VALUES("Blue", 1);
-INSERT INTO cats(age, name)
-    VALUES(7, "Draco");
+VALUES ('Charlie', 10),
+       ('Sadie', 3),
+       ('Lazy Bear', 1),
+       ('Blue', 2),
+       ('Draco', 6);
 SELECT * FROM cats;
 DROP TABLE cats;
 DROP DATABASE cats_app;
