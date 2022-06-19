@@ -1,28 +1,28 @@
-CREATE DATABASE cats_app;
-USE cats_app;
-#CREATE TABLE cats(name VARCHAR(50), age INT);
-CREATE TABLE cats(name VARCHAR(50) NOT NULL, age INT NOT NULL);
-INSERT INTO cats(name, age)
-VALUES ('Charlie', 10),
-       ('Sadie', 3),
-       ('Lazy Bear', 1),
-       ('Blue', 2),
-       ('Draco', 6);
+#CREATE DATABASE cats_app;
+#USE cats_app;
+##CREATE TABLE cats(name VARCHAR(50), age INT);
+#CREATE TABLE cats(name VARCHAR(50) NOT NULL, age INT NOT NULL);
+#INSERT INTO cats(name, age)
+#VALUES ('Charlie', 10),
+#       ('Sadie', 3),
+#       ('Lazy Bear', 1),
+#       ('Blue', 2),
+#       ('Draco', 6);
 
-# age not defined -> age becomes NULL
-INSERT INTO cats(name) VALUES ('Alabama');
-SHOW WARNINGS;
+## age not defined -> age becomes NULL
+#INSERT INTO cats(name) VALUES ('Alabama');
+#SHOW WARNINGS;
 
-# name & age both not defined -> both become NULL
-INSERT INTO cats() VALUES ();
-SHOW WARNINGS;
+## name & age both not defined -> both become NULL
+#INSERT INTO cats() VALUES ();
+#SHOW WARNINGS;
 
-# both columns are NULL 'YES'
-DESC cats;
+## both columns are NULL 'YES'
+#DESC cats;
 
-SELECT * FROM cats;
-DROP TABLE cats;
-DROP DATABASE cats_app;
+#SELECT * FROM cats;
+#DROP TABLE cats;
+#DROP DATABASE cats_app;
 
 #### insert challenge
 #CREATE DATABASE challenge;
@@ -50,3 +50,20 @@ DROP DATABASE cats_app;
 
 #DROP TABLE people;
 #DROP DATABASE challenge;
+
+#### DEFAULT VALUE #############################################################
+  DROP DATABASE cats_app;
+CREATE DATABASE cats_app;
+   USE cats_app;
+CREATE TABLE cats (
+    name VARCHAR(20) DEFAULT 'unnamed' NOT NULL,
+    age  INT         DEFAULT 99        NOT NULL  # cuz this NOT NULL
+);
+ #DESC cats;
+INSERT INTO cats (age) VALUES (13);  # 'unnamed', 13
+INSERT INTO cats (name) VALUES ('Blue');  # 'Blue', 99
+INSERT INTO cats () VALUES ();  # 'unnamed', 99
+#INSERT INTO cats (name, age) VALUES ('Montana', NULL); -> age cannot be NULL
+SELECT * FROM cats;
+  DROP TABLE cats;
+  DROP DATABASE cats_app;
