@@ -52,18 +52,41 @@
 #DROP DATABASE challenge;
 
 #### DEFAULT VALUE #############################################################
-  DROP DATABASE cats_app;
+#  DROP DATABASE cats_app;
+#CREATE DATABASE cats_app;
+#   USE cats_app;
+#CREATE TABLE cats (
+#    name VARCHAR(20) DEFAULT 'unnamed' NOT NULL,
+#    age  INT         DEFAULT 99        NOT NULL  # cuz this NOT NULL
+#);
+# #DESC cats;
+#INSERT INTO cats (age) VALUES (13);  # 'unnamed', 13
+#INSERT INTO cats (name) VALUES ('Blue');  # 'Blue', 99
+#INSERT INTO cats (name) VALUES ('Blue');  # duplicate row
+#INSERT INTO cats () VALUES ();  # 'unnamed', 99
+##INSERT INTO cats (name, age) VALUES ('Montana', NULL); -> age cannot be NULL
+#SELECT * FROM cats;
+#  DROP TABLE cats;
+#  DROP DATABASE cats_app;
+
+#### UNIQUE ID #################################################################
 CREATE DATABASE cats_app;
    USE cats_app;
-CREATE TABLE cats (
-    name VARCHAR(20) DEFAULT 'unnamed' NOT NULL,
-    age  INT         DEFAULT 99        NOT NULL  # cuz this NOT NULL
-);
- #DESC cats;
-INSERT INTO cats (age) VALUES (13);  # 'unnamed', 13
-INSERT INTO cats (name) VALUES ('Blue');  # 'Blue', 99
-INSERT INTO cats () VALUES ();  # 'unnamed', 99
-#INSERT INTO cats (name, age) VALUES ('Montana', NULL); -> age cannot be NULL
-SELECT * FROM cats;
-  DROP TABLE cats;
+
+CREATE TABLE unique_cats (
+         id   INT         AUTO_INCREMENT NOT NULL,
+         name VARCHAR(50) DEFAULT 'unknown',
+         age  INT         DEFAULT 99,
+         PRIMARY KEY(id)
+       );
+  #DESC unique_cats;
+
+INSERT INTO unique_cats (name, age) VALUES ("Helena", 8);
+INSERT INTO unique_cats (name, age) VALUES ("Jacob", 3);
+INSERT INTO unique_cats (name, age) VALUES ("Irene", 2);
+INSERT INTO unique_cats (name, age) VALUES ("Dan", 7);
+
+SELECT * FROM unique_cats;
+
+  DROP TABLE unique_cats;
   DROP DATABASE cats_app;
