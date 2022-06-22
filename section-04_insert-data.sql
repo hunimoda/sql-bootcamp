@@ -69,24 +69,50 @@
 #  DROP TABLE cats;
 #  DROP DATABASE cats_app;
 
-#### UNIQUE ID #################################################################
-CREATE DATABASE cats_app;
-   USE cats_app;
+##### UNIQUE ID #################################################################
+#CREATE DATABASE cats_app;
+#   USE cats_app;
+#
+#CREATE TABLE unique_cats (
+#         id   INT         AUTO_INCREMENT NOT NULL,
+#         name VARCHAR(50) DEFAULT 'unknown',
+#         age  INT         DEFAULT 99,
+#         PRIMARY KEY(id)
+#       );
+#  #DESC unique_cats;
+#
+#INSERT INTO unique_cats (name, age) VALUES ("Helena", 8);
+#INSERT INTO unique_cats (name, age) VALUES ("Jacob", 3);
+#INSERT INTO unique_cats (name, age) VALUES ("Irene", 2);
+#INSERT INTO unique_cats (name, age) VALUES ("Dan", 7);
+#
+#SELECT * FROM unique_cats;
+#
+#  DROP TABLE unique_cats;
+#  DROP DATABASE cats_app;
 
-CREATE TABLE unique_cats (
-         id   INT         AUTO_INCREMENT NOT NULL,
-         name VARCHAR(50) DEFAULT 'unknown',
-         age  INT         DEFAULT 99,
-         PRIMARY KEY(id)
+#### EXERCISE #################################################################
+CREATE DATABASE company;
+   USE company;
+CREATE TABLE staff (
+         id             INT         AUTO_INCREMENT     NOT NULL PRIMARY KEY,
+         last_name      VARCHAR(50)                    NOT NULL,
+         first_name     VARCHAR(50)                    NOT NULL,
+         middle_name    VARCHAR(50),
+         age            INT                            NOT NULL,
+         current_status VARCHAR(50) DEFAULT 'employed' NOT NULL
        );
-  #DESC unique_cats;
-
-INSERT INTO unique_cats (name, age) VALUES ("Helena", 8);
-INSERT INTO unique_cats (name, age) VALUES ("Jacob", 3);
-INSERT INTO unique_cats (name, age) VALUES ("Irene", 2);
-INSERT INTO unique_cats (name, age) VALUES ("Dan", 7);
-
-SELECT * FROM unique_cats;
-
-  DROP TABLE unique_cats;
-  DROP DATABASE cats_app;
+  DESC staff;
+INSERT INTO staff (
+         last_name, first_name, age
+       ) VALUES (
+         "Kim", "Daehoon", 27
+       );
+INSERT INTO staff (
+         last_name, first_name, middle_name, age, current_status
+       ) VALUES (
+         "Lee", "Daniel", "Johnson", 44, "terminated"
+       );
+SELECT * FROM staff;
+  DROP TABLE staff;
+  DROP DATABASE company;
