@@ -17,7 +17,16 @@ VALUES ('Ringo', 'Tabby', 4),
        ('Jackson', 'Sphynx', 7);
 
 #### PUT YOUR CODE HERE ########################################################
+## select columns
+#SELECT * FROM cats;  # selects all columns
+#SELECT name FROM cats;  # only selects name column
+#SELECT name, age FROM cats;  # selects multiple columns
+#SELECT age, name FROM cats;  # order matters
 
+# use where clause
+SELECT * FROM cats WHERE age = 4;
+SELECT * FROM cats WHERE name = 'Egg';
+SELECT * FROM cats WHERE name = 'EGG';  # case doesn't matter by default
 ################################################################################
 
   DROP DATABASE cats_app;
