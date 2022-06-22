@@ -23,10 +23,17 @@ VALUES ('Ringo', 'Tabby', 4),
 #SELECT name, age FROM cats;  # selects multiple columns
 #SELECT age, name FROM cats;  # order matters
 
-# use where clause
-SELECT * FROM cats WHERE age = 4;
-SELECT * FROM cats WHERE name = 'Egg';
-SELECT * FROM cats WHERE name = 'EGG';  # case doesn't matter by default
+## use where clause
+#SELECT * FROM cats WHERE age = 4;
+#SELECT * FROM cats WHERE name = 'Egg';
+#SELECT * FROM cats WHERE name = 'EGG';  # case doesn't matter by default
+################################################################################
+
+#### SELECT CHALLENGES #########################################################
+SELECT id FROM cats;
+SELECT name, breed FROM cats;
+SELECT name, age FROM cats WHERE breed = 'Tabby';
+SELECT id, age FROM cats WHERE id = age;
 ################################################################################
 
   DROP DATABASE cats_app;
